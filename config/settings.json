@@ -66,14 +66,14 @@
 
   // Panels and sidebars - docked, no floating
   "workbench.panel.defaultLocation": "bottom", // Panels go to bottom, not floating
-  "workbench.panel.opensMaximized": false, // Panels stay compact
+  "workbench.panel.opensMaximized": "never", // Panels stay compact
   "workbench.sideBar.location": "left", // Sidebar fixed to left
   "workbench.editor.showTabs": "multiple", // Keep all tabs visible for keyboard nav
 
   // Find and replace - keyboard-focused
   "editor.find.addExtraSpaceOnTop": false, // Compact find widget
   "editor.find.autoFindInSelection": "never", // Explicit toggle required
-  "editor.find.seedSearchStringFromSelection": "auto", // Use selection as seed
+  "editor.find.seedSearchStringFromSelection": "selection", // Use selection as seed
   "editor.find.globalFindClipboard": true, // Persist search across sessions
 
   // Command palette and UI
@@ -1576,6 +1576,7 @@
   "redhat.telemetry.enabled": false,
   "terminal.integrated.env.windows": {},
   "js/ts.updateImportsOnFileMove.enabled": "always",
+
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.replaceTagsWhenPull": true,
@@ -1584,6 +1585,12 @@
   "sonarlint.focusOnNewCode": false,
   "editor.stickyScroll.maxLineCount": 7,
   "terminal.integrated.initialHint": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.navigateUp",
+    "workbench.action.navigateDown",
+    "workbench.action.navigateLeft",
+    "workbench.action.navigateRight"
+  ],
   "xml.server.preferBinary": true,
   "java.completion.enabled": true,
   "java.completion.importOrder": ["java", "javax", "org", "com"],
@@ -1624,7 +1631,6 @@
     "https://github.com/obra/superpowers",
     "https://github.com/DietrichGebert/ponytail"
   ],
-  "workbench.colorTheme": "Tokyo Night Gogh",
   "editor.stickyScroll.enabled": false,
   "workbench.editor.editorActionsLocation": "titleBar",
   "git.openRepositoryInParentFolders": "always",
@@ -1633,5 +1639,6 @@
   "workbench.activityBar.location": "top",
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
-  }
+  },
+  "workbench.colorTheme": "GitHub Dark High Contrast"
 }

@@ -49,24 +49,19 @@
   // └────────────────────────────────────────────────────────────────────────────────────┘
   //
   // Spatial navigation across editor splits, sidebars, and panels.
-  // Use actual split focus commands when multiple editor groups are open.
-  // When there is only one editor group, fall back to the Explorer/Chat/Panel UI.
+  // Specific list and suggestion widget overrides appear lower in this file
+  // and take precedence due to VS Code's bottom-to-top evaluation.
   //
-  { "key": "ctrl+h", "command": "workbench.action.focusLeftGroup", "when": "editorTextFocus && multipleEditorGroups" },
-  { "key": "ctrl+h", "command": "workbench.files.action.focusFilesExplorer", "when": "editorTextFocus && !multipleEditorGroups" },
+  { "key": "ctrl+h", "command": "workbench.action.navigateLeft" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateRight" },
+  { "key": "ctrl+j", "command": "workbench.action.navigateDown" },
+  { "key": "ctrl+k", "command": "workbench.action.navigateUp" },
 
-  { "key": "ctrl+l", "command": "workbench.action.focusRightGroup", "when": "editorTextFocus && multipleEditorGroups" },
-  { "key": "ctrl+l", "command": "workbench.action.focusAuxiliaryBar", "when": "editorTextFocus && !multipleEditorGroups" },
-
-  { "key": "ctrl+j", "command": "workbench.action.focusBelowGroup", "when": "editorTextFocus && multipleEditorGroups" },
-  { "key": "ctrl+j", "command": "workbench.action.focusPanel", "when": "editorTextFocus && !multipleEditorGroups" },
-
-  { "key": "ctrl+k", "command": "workbench.action.focusAboveGroup", "when": "editorTextFocus && multipleEditorGroups" },
-  { "key": "ctrl+k", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus || panelFocus" },
-
-  // Return paths back into the editor from the surrounding views.
-  { "key": "ctrl+l", "command": "workbench.action.focusActiveEditorGroup", "when": "sideBarFocus" },
-  { "key": "ctrl+h", "command": "workbench.action.focusActiveEditorGroup", "when": "auxiliaryBarFocus" },
+  // Terminal navigation overrides to ensure keys escape shell directly
+  { "key": "ctrl+h", "command": "workbench.action.navigateLeft", "when": "terminalFocus" },
+  { "key": "ctrl+l", "command": "workbench.action.navigateRight", "when": "terminalFocus" },
+  { "key": "ctrl+j", "command": "workbench.action.navigateDown", "when": "terminalFocus" },
+  { "key": "ctrl+k", "command": "workbench.action.navigateUp", "when": "terminalFocus" },
 
   // ┌────────────────────────────────────────────────────────────────────────────────────┐
   // │ VIEW RESIZING - Ctrl+Shift+h/j/k/l                                                 │
@@ -383,18 +378,6 @@
     "key": "k",
     "command": "list.focusUp",
     "when": "listFocus && !inputFocus"
-  },
-
-  // Navigate in panels with Ctrl+j/k as alternative
-  {
-    "key": "ctrl+j",
-    "command": "list.focusDown",
-    "when": "panelFocus && !terminalFocus && listFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "list.focusUp",
-    "when": "panelFocus && !terminalFocus && listFocus"
   },
 
   // ┌────────────────────────────────────────────────────────────────────────────────────┐
