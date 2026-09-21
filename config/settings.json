@@ -1640,5 +1640,6 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
-  "workbench.colorTheme": "GitHub Dark High Contrast"
+  "workbench.colorTheme": "GitHub Dark High Contrast",
+  "java.jdt.ls.vmargs": "-Xms512m -Xmx4G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }
