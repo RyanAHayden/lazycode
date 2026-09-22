@@ -1640,7 +1640,7 @@
   "jdk.telemetry.enabled": false,
   "workbench.activityBar.location": "top",
   "[java]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "redhat.java",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "never"
   }
