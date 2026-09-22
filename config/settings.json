@@ -1598,6 +1598,9 @@
     "org.junit.Assert.*",
     "org.mockito.Mockito.*"
   ],
+  "java.saveActions.organizeImports": false,
+  "java.cleanup.actions": [],
+  "java.saveActions.cleanup": false,
   "editor.accessibilitySupport": "off",
   "workbench.browser.showInTitleBar": true,
   "workbench.browser.openLocalhostLinks": true,
@@ -1635,10 +1638,12 @@
   "workbench.editor.editorActionsLocation": "titleBar",
   "git.openRepositoryInParentFolders": "always",
   "jdk.telemetry.enabled": false,
-  "chat.viewSessions.orientation": "stacked",
   "workbench.activityBar.location": "top",
   "[java]": {
-    "editor.defaultFormatter": "redhat.java"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  }
   },
   "workbench.colorTheme": "GitHub Dark High Contrast",
   "java.jdt.ls.vmargs": "-Xms512m -Xmx4G -XX:+UseG1GC -XX:+UseStringDeduplication"
