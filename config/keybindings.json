@@ -477,6 +477,59 @@
   // to scroll the response webview from the input area — click a response first).
   //
   { "key": "ctrl+d", "command": "list.focusPageDown", "when": "auxiliaryBarFocus && !inChatInput" },
-  { "key": "ctrl+u", "command": "list.focusPageUp",   "when": "auxiliaryBarFocus && !inChatInput" }
-
+  {
+    "key": "ctrl+u",
+    "command": "list.focusPageUp",
+    "when": "auxiliaryBarFocus && !inChatInput"
+  },
+  // Inline suggestions/changes
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "editorTextFocus && !editorReadonly && (inlineEditIsVisible || inlineSuggestionVisible)"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inInlineEditsPreviewEditor"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inInlineEditsPreviewEditor"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-markdown.editor.insertParagraph",
+    "when": "markdownEditorFocus && activeCustomEditorId == 'vscode.markdown.editor'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-notebook.cell.insertCodeCellBelow",
+    "when": "notebookCellListFocused && !inputFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+    "when": "accessibilityHelpIsShown"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-markdown.editor.cursorLogicalLineEnd",
+    "when": "false"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  }
 ]

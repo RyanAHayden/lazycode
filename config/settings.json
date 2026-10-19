@@ -35,6 +35,7 @@
 
   // Hover behavior - dismiss with keyboard, no sticky popups
   "chat.permissions.default": "autoApprove",
+  "chat.tools.global.autoApprove": true,
   "editor.hover.sticky": false, // Don't keep hover open on mouse leave
   "editor.hover.delay": 500, // Delay before showing hover (prevents accidental popups)
   "editor.hover.enabled": "on", // Show lightbulb in gutter (not floating)
@@ -406,7 +407,7 @@
       "commands": ["workbench.action.problems.focus"]
     },
     {
-      "before": ["<leader>", "c", "o"], // <leader>co = organise imports
+      "before": ["<leader>", "c", "o"], // <leader>co = organize imports
       "commands": ["editor.action.organizeImports"]
     },
 
@@ -1581,8 +1582,13 @@
   "git.confirmSync": false,
   "git.replaceTagsWhenPull": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "sonarlint.automaticAnalysis": true,
+  // 1. Only report SonarLint issues on code you are actively editing, not all 7k+ legacy files:
   "sonarlint.focusOnNewCode": false,
+
+  // 2. Prevent m2e from executing problematic lifecycle plugins during background workspace builds:
+  "java.configuration.maven.userSettings": null,
+  "java.autobuild.enabled": true,
+  "sonarlint.automaticAnalysis": true,
   "editor.stickyScroll.maxLineCount": 7,
   "terminal.integrated.initialHint": false,
   "terminal.integrated.commandsToSkipShell": [
@@ -1598,6 +1604,7 @@
     "org.junit.Assert.*",
     "org.mockito.Mockito.*"
   ],
+  "java.compile.nullAnalysis.mode": "disabled",
   "java.saveActions.organizeImports": false,
   "java.cleanup.actions": [],
   "java.saveActions.cleanup": false,
@@ -1615,13 +1622,13 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "debug.breakpointsView.presentation": "tree",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
     "html": false
   },
-  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "rvest.vs-code-prettier-eslint" },
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -1645,6 +1652,5 @@
     "source.organizeImports": "never"
   }
   },
-  "workbench.colorTheme": "GitHub Dark High Contrast",
-  "java.jdt.ls.vmargs": "-Xms512m -Xmx4G -XX:+UseG1GC -XX:+UseStringDeduplication"
+  "java.jdt.ls.vmargs": "-Xms8G -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
 }
