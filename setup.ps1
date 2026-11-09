@@ -28,7 +28,7 @@ $settings = [IO.File]::ReadAllText((Join-Path $Repo 'config\settings.json'))
 $localSettings = Join-Path $Local 'settings.json'
 if (Test-Path $localSettings) {
     # both files are JSONC (comments, trailing commas), so splice them as text; later keys win in VS Code
-    $base = ($settings -replace '\}\s*\z', '') -replace ',?\s*\z', ",`n"
+    $base = ($settings -replace '\}\s*\z', '').TrimEnd().TrimEnd(',') + ",`n"
     $extra = ([IO.File]::ReadAllText($localSettings) -replace '\A\s*\{[ \t]*\r?\n?', '') -replace '\s*\}\s*\z', ''
     $settings = "// Built by setup.ps1 from config\settings.json + $localSettings`: edit those and re-run.`n" +
         "// Changes made here are overwritten (the previous file is kept as settings.json.bak).`n" +
