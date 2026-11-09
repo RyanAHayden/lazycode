@@ -40,9 +40,9 @@ $mcp = Join-Path $Local 'mcp.json'
 if (Test-Path $mcp) { Put (Join-Path $Usr 'mcp.json') ([IO.File]::ReadAllText($mcp)) }
 
 Write-Host "==> lazycode: extensions"
-$have = code --list-extensions 2>$null
+$have = cmd /c "code --list-extensions 2>nul"
 $want = @(Get-Content (Join-Path $Repo 'extensions.txt'))
 if (Test-Path (Join-Path $Local 'extensions.txt')) { $want += Get-Content (Join-Path $Local 'extensions.txt') }
 foreach ($e in $want | Where-Object { $_ -and $_ -notmatch '^#' }) {
-    if ($have -notcontains $e) { code --install-extension $e 2>&1 | Out-Null }
+    if ($have -notcontains $e) { cmd /c "code --install-extension $e >nul 2>nul" }
 }
