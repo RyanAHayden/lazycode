@@ -1653,5 +1653,9 @@
     "source.organizeImports": "never"
   }
   },
-  "java.jdt.ls.vmargs": "-Xms8G -Xmx8G -XX:+UseG1GC -XX:+UseStringDeduplication",
+  "chat.agent.maxRequests": 10000000000000000, // never stop to ask "continue?"
+  "chat.viewSessions.orientation": "stacked",
+  "git.blame.editorDecoration.enabled": true, // inline blame on the current line
+  "git.blame.statusBarItem.enabled": false,
+  "gitlens.graph.details.location": "auto",
 }

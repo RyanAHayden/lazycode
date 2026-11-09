@@ -5,3 +5,5 @@ eamodio.gitlens
 hoovercj.vscode-settings-cycler
 esbenp.prettier-vscode
 ms-vscode-remote.remote-ssh
+mhutchie.git-graph
+mechatroner.rainbow-csv

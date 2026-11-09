@@ -531,5 +531,9 @@
   {
     "key": "ctrl+e",
     "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm"
   }
 ]
