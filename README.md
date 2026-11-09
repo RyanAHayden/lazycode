@@ -4,12 +4,24 @@ Personal VSCode Vim config — LazyVim-style keybindings via [VimCode](https://g
 
 ## Setup
 
-1. Install extensions:
-   ```
-   code --install-extension vscodevim.vim
-   code --install-extension VSpaceCode.whichkey
-   code --install-extension eamodio.gitlens
-   code --install-extension hoovercj.vscode-settings-cycler
+### macOS / Linux
+
+```sh
+git clone https://github.com/RyanAHayden/lazycode ~/lazycode
+~/lazycode/setup.sh
+```
+
+Installs VS Code, the extensions in `extensions.txt` and (macOS) the JetBrainsMono Nerd Font, turns off macOS
+press-and-hold so held keys repeat, and symlinks `config/settings.json` and `config/keybindings.json` into VS Code's
+User folder (an existing file is kept as `*.bak`), so changes made in VS Code show up here to commit. Safe to re-run.
+[hypr-mac](https://github.com/RyanAHayden/hypr-mac) runs it; its Karabiner Ctrl→Cmd rule leaves Ctrl+D/E/I/J/K/L/N/O/R/U/V/W/Y
+as real Ctrl in VS Code for these bindings.
+
+### Windows
+
+1. Install the extensions in `extensions.txt`:
+   ```powershell
+   Get-Content extensions.txt | Where-Object { $_ -and $_ -notmatch '^#' } | ForEach-Object { code --install-extension $_ }
    ```
 
 2. Copy config files:

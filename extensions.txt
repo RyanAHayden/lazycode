@@ -1,0 +1,7 @@
+# installed by setup.sh (one id per line)
+vscodevim.vim
+VSpaceCode.whichkey
+eamodio.gitlens
+hoovercj.vscode-settings-cycler
+esbenp.prettier-vscode
+ms-vscode-remote.remote-ssh
