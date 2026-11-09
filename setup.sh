@@ -41,7 +41,7 @@ if [ -f "$LOCAL/settings.json" ]; then
 		echo "// Changes made here are overwritten (the previous file is kept as settings.json.bak)."
 		perl -0pe 's/\}\s*\z//; s/,?\s*\z/,\n/' "$REPO/config/settings.json"
 		echo
-		echo "  // ── device-only ($LOCAL/settings.json) ──"
+		echo "  // -- device-only ($LOCAL/settings.json) --"
 		perl -0pe 's/\A\s*\{[ \t]*\n?//; s/\s*\}\s*\z//' "$LOCAL/settings.json"
 		echo
 		echo "}"

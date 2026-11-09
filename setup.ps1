@@ -32,7 +32,7 @@ if (Test-Path $localSettings) {
     $extra = ([IO.File]::ReadAllText($localSettings) -replace '\A\s*\{[ \t]*\r?\n?', '') -replace '\s*\}\s*\z', ''
     $settings = "// Built by setup.ps1 from config\settings.json + $localSettings`: edit those and re-run.`n" +
         "// Changes made here are overwritten (the previous file is kept as settings.json.bak).`n" +
-        "$base`n  // ── device-only ($localSettings) ──`n$extra`n}`n"
+        "$base`n  // -- device-only ($localSettings) --`n$extra`n}`n"
 }
 Put (Join-Path $Usr 'settings.json') $settings
 
